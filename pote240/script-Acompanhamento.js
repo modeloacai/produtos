@@ -87,7 +87,7 @@ function concluirPedido() {
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
     
-    window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
+    window.location.href = '/produtos/aRESUMO/pagina-Resumo.html';
 }
 
 let indiceProduto = sessionStorage.length;
@@ -116,5 +116,5 @@ document.querySelector(".botaoAcomp").addEventListener("click", () => {
     ProdutoEscolhido()
     concluirPedido()
     // Redirecionar para a próxima página
-    window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
+    window.location.href = '/produtos/aRESUMO/pagina-Resumo.html';
 })

@@ -18,7 +18,7 @@ const FormEnd = () => {
         referencia: referencia,
       };
       sessionStorage.setItem('endereco', JSON.stringify(endereco));
-      window.location.href = '/LiderAcai/formapagamento/pagamento.html'
+      window.location.href = '/produtos/formapagamento/pagamento.html'
       } else {
       alert('Por favor, preencha todos os campos do Endereço para Entrega.');
       return false; // Impede o envio do formulário se a validação falhar
@@ -69,6 +69,6 @@ const FormEnd = () => {
   let botaoRetirada = document.querySelector("#botaoRetirada")
   botaoRetirada.addEventListener("click", () => {
     Escolha();
-    window.location.href = '/LiderAcai/formapagamento/pagamento.html'
+    window.location.href = '/produtos/formapagamento/pagamento.html'
   })
   w
