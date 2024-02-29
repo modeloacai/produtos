@@ -1,0 +1,112 @@
+/*logo*/
+.LOGO {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+section {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 40px;
+}
+
+.inputClass{
+    margin: 0px 0px 0px 150px
+}
+
+.labelPag{
+    margin: 0px 0px -65px 0px
+}
+
+#trocoSection{
+    margin: 20px 0px 0px 3em;
+}
+
+label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+
+}
+
+
+/*Botão*/
+.botao {
+    margin: 0px 0px 20px 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 20px 20px;
+    background-color: rgba(71, 4, 97);
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 1px solid black;
+    width: 160px;
+}
+
+
+.botano {
+    display: flex;
+    flex-direction: row;
+    margin: 50px 0px 0px 60px;
+    width: 200px;
+}
+
+#valorTroco {
+    width: 300px;
+}
+
+/* Para navegadores modernos que suportam o seletor ::placeholder */
+::placeholder {
+    color: #ff0303;
+    /* Substitua pela cor desejada */
+}
+
+/* Para navegadores mais antigos que suportam apenas o seletor ::-webkit-input-placeholder */
+:-webkit-input-placeholder {
+    color: #ff0303;
+    /* Substitua pela cor desejada */
+}
+
+/* Para navegadores mais antigos que suportam apenas o seletor ::-moz-placeholder */
+:-moz-placeholder {
+    color: #ff0303;
+    /* Substitua pela cor desejada */
+}
+
+/* Para navegadores mais antigos que suportam apenas o seletor :-ms-input-placeholder */
+:-ms-input-placeholder {
+    color: #ff0303;
+    /* Substitua pela cor desejada */
+}
+
+h1 {
+    margin: 40px 0px 50px 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(71, 4, 97);
+}
+

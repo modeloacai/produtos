@@ -1,0 +1,252 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+}
+
+/*Altera todas as caixas de produtos*/
+.TodosProdutos1 {
+    display: flex;
+    width: 450px;
+    max-width: 550px;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+
+}
+
+/*Altera dentro da caixa de produto*/
+.Produtos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 360px;
+    height: 400px;
+
+}
+
+.imagem {
+    margin-bottom: 20px;
+    width: 300px;
+    height: 280px;
+    border-radius: 200px;
+    box-shadow: 0px 0px 0px 2px rgb(107, 4, 107);
+}
+
+/*letras*/
+.titulo {
+    text-align: center;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 18px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(71, 4, 97);
+}
+
+h1 {
+    color: #80CD29;
+   font-weight: 900;
+}
+
+/*logo*/
+.LOGO {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0px;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+.propaganda {
+    margin: auto;
+    width: 400px;
+    height: 350px;
+    margin-top: 30px;
+}
+
+.propaganda2 {
+    margin: auto;
+    width: 450px;
+    height: 350px;
+    margin-top: 30px;
+}
+
+
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Botão*/
+.BotaoMenu {
+    background: none;
+    height: 50px;
+    width: 200px;
+   border: none;
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    transition: .5s;
+    font-weight: 900;
+}
+
+
+.img-button {
+    width: 80px;
+    height: 80px;
+    margin: -15px;
+}
+
+
+.BotaMenuPagina {
+    cursor: pointer;
+    color: rgba(71, 4, 97);
+    text-decoration: none;
+}
+
+.botano {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: -25px;
+}
+
+
+
+/*ESTILO BOTÃO EFEITO VISUAL*/
+
+/*muito importante*/
+.animated-button1 {
+    background: none;
+    padding: 10px;
+    width: 210px;
+    display: inline-block;
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    overflow: hidden;
+    color: rgba(71, 4, 97);
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /*importante faz animação existir*/
+  .animated-button1 span {
+    position: absolute;
+  }
+  /*importante*/
+  .animated-button1 span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(43, 8, 8, 0)), to(#d92626));
+    background: linear-gradient(to left, rgba(3, 23, 235, 0), rgb(128, 205, 42));
+    -webkit-animation: 2s animateTop linear infinite;
+            animation: 2s animateTop linear infinite;
+  }
+  
+  @keyframes animateTop {
+    0% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  /*importante muda a cor de uma das setas*/
+  .animated-button1 span:nth-child(2) {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 8, 0)), to(#d92626));
+    background: linear-gradient(to top, rgba(43, 8, 8, 0), rgb(128, 205, 42));
+    -webkit-animation: 2s animateRight linear -1s infinite;
+            animation: 2s animateRight linear -1s infinite;
+  }
+  
+  @keyframes animateRight {
+    0% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+  }
+  
+  /*importante muda a cor de uma das setas*/
+  .animated-button1 span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 8, 0)), to(#d92626));
+    background: linear-gradient(to right, rgba(43, 8, 8, 0), rgba(71, 4, 97));
+    -webkit-animation: 2s animateBottom linear infinite;
+            animation: 2s animateBottom linear infinite;
+  }
+  
+  @keyframes animateBottom {
+    0% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+    100% {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+    }
+  }
+  /*importante muda a cor de uma das setas*/
+  .animated-button1 span:nth-child(4) {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 8, 8, 0)), to(#d92626));
+    background: linear-gradient(to bottom, rgba(43, 8, 8, 0), rgba(71, 4, 97));
+    -webkit-animation: 2s animateLeft linear -1s infinite;
+            animation: 2s animateLeft linear -1s infinite;
+  }
+  
+  @keyframes animateLeft {
+    0% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+  }
+  
+  

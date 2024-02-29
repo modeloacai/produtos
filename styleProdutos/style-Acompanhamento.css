@@ -1,0 +1,138 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    height: 1200px;
+    color: rgba(71, 4, 97);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+}
+
+/* ----------------------------------------- */
+
+.tituloCabecalho {
+    /* altera o titulo */
+    text-align: center;
+}
+
+.CaixasAcompanhamentos {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 430px;
+}
+
+.estruturaCheckBox {
+    /* altera o layout do input checkbox */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    /* altera o texto presente dentro dos input checkbox */
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+
+.checkbox-container {
+    /* altera os input checkbox */
+    width: 300px;
+    padding-left: 10px;
+    padding: 5px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    gap: 2px;
+    box-shadow: 1px 1px 10px rgba(128, 0, 128, 0.678);
+}
+
+.checkbox-container label {
+    /* altera a margem entre o [] e o texto */
+    margin-left: 20px;
+}
+
+.tituloA {
+    /* altera o texto sobre cada input checkbox */
+    margin-top: 20px;
+    margin-bottom: -15px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+/*Botão*/
+.acompanhamento {
+    background-color: rgba(71, 4, 97);
+    height: 50px;
+    width: 200px;
+    border-radius: 100px;
+    box-shadow: 1px 2px 20px;
+    border: rgba(71, 4, 97);
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    color: rgb(254, 255, 253);
+    transition: .5s;
+    font-weight: bolder;
+}
+
+.acompanhamento:hover {
+    color: rgb(128, 205, 42);
+}
+
+.img-button {
+    width: 80px;
+    height: 80px;
+    margin: -15px;
+}
+
+.botano{
+display: flex;
+flex-direction: row;
+justify-content: center;
+margin-top: 50px;
+}
+
+
+.LOGO {
+    /* altera a imagem do topo */
+    margin: auto;
+    margin-bottom: 15px;
+    margin-top: 50px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    box-shadow: 1px 1px 20px purple;
+
+}
+
+.TextoCabe {
+     /* altera o texto abaixo da imagem */
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bolder;
+}
+
+.TextoCabe {
+    /* altera o texto abaixo da imagem */
+   text-align: center;
+   margin-bottom: 50px;
+   font-weight: bolder;
+}
+
+span{
+   color: red;
+   font-weight: bolder;
+}

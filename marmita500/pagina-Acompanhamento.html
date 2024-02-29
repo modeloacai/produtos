@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styleProdutos/style-Acompanhamento.css">
+
+    <script src="script-Acompanhamento.js" defer></script>
+    <title>LIDER AÇAÍ</title>
+</head>
+
+<body>
+
+    <main>
+        <img src="../img-Index/marmita500ml.jpeg" alt="" class="LOGO">
+        <p class="TextoCabe">MARMITA 500ml - R$ 22,90</p>
+        <section class="Acompanhamentos">
+            <h1 class="tituloCabecalho">ESCOLHA OS ACOMPANHAMENTOS</h1>
+            <div class="CaixasAcompanhamentos">
+                <form id="myForm" action="" method="post">
+
+                    <div class="estruturaCheckBox">
+                        <label class="tituloA">COBERTURA (ESCOLHA 1 OPÇÃO)</label>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="cobertura01" class="inputProdutos" name="cobertura"
+                                data-text="COB CHOCOLATE - R$" value="0.00">
+                            <label for="cobertura01">COB CHOCOLATE</label>
+
+                            <input type="checkbox" id="cobertura02" class="inputProdutos" name="cobertura"
+                                data-text="COB LEITE CONDENSADO - R$" value="0.00">
+                            <label for="cobertura02">COB LEITE CONDENSADO</label>
+
+                            <input type="checkbox" id="cobertura03" class="inputProdutos" name="cobertura"
+                                data-text="COB MORANGO - R$" value="0.00">
+                            <label for="cobertura03">COB MORANGO</label>
+
+                            <input type="checkbox" id="cobertura04" class="inputProdutos" name="cobertura"
+                                data-text="SEM COBERTURA" value="0.00">
+                            <label for="cobertura03"><span>SEM COBERTURA</span></label>
+                        </div>
+
+                        <label class="tituloA">FRUTAS (ESCOLHA ATÉ 2 OPÇÕES)</label>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="fruta01" class="inputProdutos" name="frutas"
+                                data-text="BANANA - R$" value="0.00">
+                            <label for="fruta01">BANANA</label>
+
+                            <input type="checkbox" id="fruta02" class="inputProdutos" name="frutas"
+                                data-text="KIWI - R$" value="0.00">
+                            <label for="fruta02">KIWI</label>
+
+                            <input type="checkbox" id="fruta03" class="inputProdutos" name="frutas"
+                                data-text="MORANGO - R$" value="0.00">
+                            <label for="fruta03">MORANGO</label>
+
+                            <input type="checkbox" id="fruta03" class="inputProdutos" name="frutas"
+                                data-text="UVA SEM SEMENTE  - R$" value="0.00">
+                            <label for="fruta03">UVA SEM SEMENTE</label>
+
+                            <input type="checkbox" id="fruta05" class="inputProdutos" name="frutas"
+                                data-text="SEM FRUTAS" value="0.00">
+                            <label for="fruta03"><span>SEM FRUTAS</span></label>
+                            <!-- Adicione mais opções conforme necessário -->
+                        </div>
+
+                        <label class="tituloA">COMPLEMENTO (ESCOLHA ATÉ 5 OPÇÕES)</label>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="complemento01" class="inputProdutos" name="complementos"
+                                data-text="AMENDOIM TRITURADO - R$" value="0.00">
+                            <label for="complemento01">AMENDOIM TRITURADO</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="CASTANHA TRITURADA - R$" value="0.00">
+                            <label for="complemento03">CASTANHA TRITURADA</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="CREME DE AMENDOIM - R$" value="0.00">
+                            <label for="complemento03">CREME DE AMENDOIM</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="CREME DE AVELÃ - R$" value="0.00">
+                            <label for="complemento03">CREME DE AVELÃ</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="CREME DE NINHO - R$" value="0.00">
+                            <label for="complemento03">CREME DE NINHO</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="DISQUETI - R$" value="0.00">
+                            <label for="complemento03">DISQUETI</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="FINI BEIJINHO - R$" value="0.00">
+                            <label for="complemento03">FINI BEIJINHO</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="GOTAS DE CHOCOLATE - R$" value="0.00">
+                            <label for="complemento03">GOTAS DE CHOCOLATE</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="GRANOLA - R$" value="0.00">
+                            <label for="complemento03">GRANOLA</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="LEITE EM PÓ(NINHO) - R$" value="0.00">
+                            <label for="complemento03">LEITE EM PÓ(NINHO)</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="MASHMELOW - R$" value="0.00">
+                            <label for="complemento03">MASHMELOW</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="OVOMALTINE - R$" value="0.00">
+                            <label for="complemento03">OVOMALTINE</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="FINI DENTADURA - R$" value="0.00">
+                            <label for="complemento03">FINI DENTADURA</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                            data-text="PAÇOCA - R$" value="0.00">
+                        <label for="complemento03">PAÇOCA</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="SONHO DE VALSA - R$" value="2.00">
+                            <label for="complemento03">SONHO DE VALSA +R$2,00</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="CEREJA - R$" value="4.00">
+                            <label for="complemento03">CEREJA +R$ 4,00</label>
+
+                            <input type="checkbox" id="complemento02" class="inputProdutos" name="complementos"
+                                data-text="BIS BRANCO - R$" value="2.00">
+                            <label for="complemento02">BIS BRANCO +R$ 2,00</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="BIS PRETO - R$" value="2.00">
+                            <label for="complemento03">BIS PRETO +R$ 2,00</label>
+
+                            <input type="checkbox" id="complemento03" class="inputProdutos" name="complementos"
+                                data-text="SEM COMPLEMENTO" value="0.00">
+                            <label for="complemento03"><span>SEM COMPLEMENTO</span></label>
+
+                            <!-- Adicione mais opções conforme necessário -->
+                        </div>
+
+                        <label class="tituloA">EXTRA (ESCOLHA ATÉ 20 OPÇÕES)</label>
+                        <div class="checkbox-container">
+
+                            <input type="checkbox" id="extra01" class="inputProdutos" name="extras"
+                                data-text="AMENDOIM TRITURADO - R$" value="2.50">
+                            <label for="extra01">AMENDOIM TRITURADO +R$ 2,50</label>
+
+
+                            <input type="checkbox" id="extra02" class="inputProdutos" name="extras"
+                                data-text="BANANA - R$" value="2.00">
+                            <label for="extra02">BANANA +R$ 2,00</label>
+
+
+                            <input type="checkbox" id="extra03" class="inputProdutos" name="extras"
+                                data-text="BIS BRANCO - R$" value="2.00">
+                            <label for="extra03">BIS BRANCO +R$ 2,00</label>
+
+                            <input type="checkbox" id="extra01" class="inputProdutos" name="extras"
+                                data-text="BIS PRETO - R$" value="2.00">
+                            <label for="extra01">BIS PRETO +R$ 2,00</label>
+
+
+                            <input type="checkbox" id="extra02" class="inputProdutos" name="extras"
+                                data-text="CASTANHA TRITURADA - R$" value="4.00">
+                            <label for="extra02">CASTANHA TRITURADA +R$ 4,00</label>
+
+
+                            <input type="checkbox" id="extra03" class="inputProdutos" name="extras"
+                                data-text="CEREJA - R$" value="4.00">
+                            <label for="extra03">CEREJA +R$ 4,00</label>
+
+                            <input type="checkbox" id="extra01" class="inputProdutos" name="extras"
+                                data-text="CREME DE AMENDOIM - R$" value="4.00">
+                            <label for="extra01">CREME DE AMENDOIM R$ 4,00</label>
+
+
+                            <input type="checkbox" id="extra02" class="inputProdutos" name="extras"
+                                data-text="CREME DE NINHO - R$" value="4.00">
+                            <label for="extra02">CREME DE NINHO R$ 4,00</label>
+
+
+                            <input type="checkbox" id="extra03" class="inputProdutos" name="extras"
+                                data-text="DISQUETI - R$" value="3.50">
+                            <label for="extra03">DISQUETI R$ 3,50</label>
+
+                            <input type="checkbox" id="extra01" class="inputProdutos" name="extras"
+                                data-text="FINI BEIJINHO - R$" value="2.00">
+                            <label for="extra01">FINI BEIJINHO R$ 2,00</label>
+
+
+                            <input type="checkbox" id="extra02" class="inputProdutos" name="extras"
+                                data-text="GOTAS DE CHOCOLATE - R$" value="3.00">
+                            <label for="extra02">GOTAS DE CHOCOLATE +R$ 3,00</label>
+
+
+                            <input type="checkbox" id="extra03" class="inputProdutos" name="extras"
+                                data-text="GRANOLA - R$" value="3.00">
+                            <label for="extra03">GRANOLA +R$ 3,00</label>
+
+                            <input type="checkbox" id="extra01" class="inputProdutos" name="extras"
+                                data-text="KIWI - R$" value="4.00">
+                            <label for="extra01">KIWI +R$4,00</label>
+
+
+                            <input type="checkbox" id="extra02" class="inputProdutos" name="extras"
+                                data-text="LEITE EM PÓ(NINHO) - R$" value="4.00">
+                            <label for="extra02">LEITE EM PÓ(NINHO) +R$4,00</label>
+
+
+                            <input type="checkbox" id="extra03" class="inputProdutos" name="extras"
+                                data-text="MARSHMALLOW - R$" value="2.00">
+                            <label for="extra03">MARSHMALLOW +R$ 2,00</label>
+
+                            <input type="checkbox" id="extra01" class="inputProdutos" name="extras" data-text="MORANGO"
+                                value="4.00">
+                            <label for="extra01">MORANGO +R$ 4,00</label>
+
+
+                            <input type="checkbox" id="extra02" class="inputProdutos" name="extras"
+                                data-text="OVOMLATINE - R$" value="3.00">
+                            <label for="extra02">OVOMALTINE +R$ 3,00</label>
+
+                            <input type="checkbox" id="extra01" class="inputProdutos" name="extras"
+                                data-text="SONHO DE VALSA - R$" value="2.00">
+                            <label for="extra01">FINI DENTADURA +R$ 2,00</label>
+
+                            <input type="checkbox" id="extra03" class="inputProdutos" name="extras"
+                                data-text="PAÇOCA - R$" value="2.00">
+                            <label for="extra03">PAÇOCA +R$ 2,00</label>
+
+                            <input type="checkbox" id="extra01" class="inputProdutos" name="extras"
+                                data-text="SONHO DE VALSA - R$" value="2.00">
+                            <label for="extra01">SONHO DE VALSA +R$ 2,00</label>
+
+
+                            <input type="checkbox" id="extra02" class="inputProdutos" name="extras"
+                                data-text="UVA SEM SEMENTE - R$" value="4.00">
+                            <label for="extra02">UVA SEM SEMENTE +R$ 4,00</label>
+
+                            <input type="checkbox" id="extra02" class="inputProdutos" name="extras"
+                            data-text="CREME DE AVELÃ - R$" value="4.00">
+                        <label for="extra02">CREME DE AVELÃ +R$ 4,00</label>
+
+
+                            <!-- Adicione mais opções conforme necessário -->
+                        </div>
+                    </div>
+
+            </div>
+            <div class="botano"><img src="../img-Index/BOTAO2.jpg" alt="" srcset="" class="img-button">
+                <button type="button" class=" botaoAcomp acompanhamento" value="22.90" data-text="MARMITA 500ml">
+                    AVANÇAR
+                </button>
+            </div>
+            </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
