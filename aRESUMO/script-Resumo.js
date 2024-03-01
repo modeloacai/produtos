@@ -1,6 +1,7 @@
 
 const carrinhoCompras = () => {
-  let somaGeral = 0
+  let somaGeral = 0;
+  let valorAtual = 0;
   const container = document.querySelector('.conteudo');
 
   const Apagar = (div, chaveProduto, chaveValor, somaTotal) => {
@@ -23,6 +24,11 @@ const carrinhoCompras = () => {
     sessionStorage.removeItem(chaveProduto);
     sessionStorage.removeItem(chaveValor);
   };
+
+  const valorGlobalQuantidade =(chaveQuantidade)=>{
+    valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade));
+    console.log("valorAtual: "+valorAtual)
+  }
 
   const displaySpan = (div, escolhaQuantidade) => {
     let span = document.createElement('span');
@@ -136,13 +142,13 @@ const carrinhoCompras = () => {
         const somaExtras = somarArray(escolhaExtras);
 
         // Calcular a soma total
-        const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
+        const somaTotal = parseFloat(escolhaValor) * valorAtual + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
 
         // Construir o texto com os resultados
         div.innerHTML += `
 <p><br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br>
 <span style="font-weight: bold;">&#128178 Tamanho R$:</span> ${escolhaValor.toFixed(2)} <br>
-<span style="font-weight: bold;">&#x27A1 Quantidade:</span> ${escolhaQuantidade}<br>
+<span style="font-weight: bold;">&#x27A1 Quantidade:</span> ${valorAtual}<br>
 <span style="font-weight: bold;">&#128178 Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
 <span style="font-weight: bold;">&#128178 Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
 <span style="font-weight: bold;">&#128178 Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
@@ -154,8 +160,9 @@ const carrinhoCompras = () => {
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor, somaTotal);
         botaMaisMenos(div, chaveQuantidade);
-        displaySpan(div, escolhaQuantidade);
+        displaySpan(div, escolhaQuantidade,chaveQuantidade);
         calcular(somaTotal);
+        valorGlobalQuantidade(chaveQuantidade);
       }
     }
   }
