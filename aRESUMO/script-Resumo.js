@@ -26,6 +26,8 @@ const carrinhoCompras = () => {
 
   const CriaDiv = () => {
     for (let i = 0; i < sessionStorage.length; i++) {
+
+      const chaveQuantidade = `quantidadeProduto_${i}`
       const chaveProduto = `escolhaProduto_${i}`;
       const chaveValor = `escolhaProdutoValor_${i}`;
 
@@ -34,6 +36,7 @@ const carrinhoCompras = () => {
       const chaveComplemento = `escolhaComplemento_${i}`;
       const chaveExtra = `escolhaExtras_${i}`;
 
+      const escolhaQuantidade = sessionStorage.getItem(chaveQuantidade);
       const escolhaProduto = sessionStorage.getItem(chaveProduto);
       const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
       const escolhaCobertura = JSON.parse(sessionStorage.getItem(chaveCobertura)) || [];
@@ -68,6 +71,7 @@ const carrinhoCompras = () => {
         div.innerHTML += `
  <p>
  <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>&#127826;${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
+ <br> <br><span style="font-weight: bold;">&#x27A1 QUANTIDADE: </span>${escolhaQuantidade}
  <br>
    <br><span style="font-weight: bold;"> ACOMPANHAMENTOS</span>
    <br><br><span style="font-weight: bold;">&#127860; COBERTURA:</span> <br> ${formatarObjetoParaString(escolhaCobertura)}
@@ -87,12 +91,13 @@ const carrinhoCompras = () => {
         const somaExtras = somarArray(escolhaExtras);
 
         // Calcular a soma total
-        const somaTotal = parseFloat(escolhaValor) + somaCobertura + somaFrutas + somaComplementos + somaExtras;
+        const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
 
         // Construir o texto com os resultados
         div.innerHTML += `
 <p><br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br>
 <span style="font-weight: bold;">&#128178 Tamanho R$:</span> ${escolhaValor.toFixed(2)} <br>
+<span style="font-weight: bold;">&#x27A1 Quantidade:</span> ${escolhaQuantidade}<br>
 <span style="font-weight: bold;">&#128178 Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
 <span style="font-weight: bold;">&#128178 Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
 <span style="font-weight: bold;">&#128178 Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>

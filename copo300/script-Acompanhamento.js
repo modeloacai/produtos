@@ -60,23 +60,7 @@ function concluirPedido() {
         }
     }
 
-    if (
-        escolhaCobertura.length > 1 ||
-        escolhaFrutas.length > 2 ||
-        escolhaComplementos.length > 3
-    ) {
-        alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida.");
-        return false;
-    }
-
-    if (
-        escolhaCobertura.length === 0 ||
-        escolhaFrutas.length === 0 ||
-        escolhaComplementos.length === 0
-    ) {
-        alert("Por favor, escolha ao menos uma seleção em cada categoria -> COBERTURA/FRUTAS/COMPLEMENTO.");
-        return false;
-    }
+   
 
 
     let OpcaoCobertura = `escolhaCobertura_${indiceCobertura}`;
@@ -91,10 +75,76 @@ function concluirPedido() {
     sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
-
-     // Redirecionar para a próxima página
-     window.location.href = '/produtos/aRESUMO/pagina-Resumo.html';
 }
+
+
+
+const ValorDisplay1 = document.getElementById('displayInput1');
+let value = parseInt(ValorDisplay1.value); // Move a declaração para fora dos eventos de clique
+
+const somarBotao = () => {
+    if (isNaN(value)) { //verifica se value não é um número.
+        value = 1;
+    } else {
+        value++;
+    }
+    ValorDisplay1.value = value;
+}
+//BOTÃO MAIS
+document.getElementById('botaoMAIS1').addEventListener('click', somarBotao);
+
+const subtrairBotao = () => {
+    if (value > 1) {
+        value--;
+    }
+    ValorDisplay1.value = value;
+}
+//BOTÃO MENOS
+document.getElementById('botaoMENOS1').addEventListener('click', subtrairBotao);
+
+
+let indiceQuantidade = sessionStorage.length;
+const Armazenar_Mais_Menos = () => {
+
+    // Use o índice atual para criar chaves únicas no sessionStorage
+    const QuantidadeProduto = `quantidadeProduto_${indiceQuantidade}`;
+    // Armazene os novos itens no sessionStorage
+    sessionStorage.setItem(QuantidadeProduto, parseInt(value));
+}
+
+
+//VALIDA SE A QUANTIDADE ESTÁ INSERIDA E DEPOIS ENVIA AO SESSIONSTORAGE
+const validacoes = () => {
+    if (ValorDisplay1.value === "" || ValorDisplay1.value == 0) {
+        alert("Informe a quantidade!");
+    }  else if (
+        escolhaCobertura.length > 1 ||
+        escolhaFrutas.length > 2 ||
+        escolhaComplementos.length > 3
+    ) {
+        alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida.");
+        return false;
+    }
+
+    else if (
+        escolhaCobertura.length === 0 ||
+        escolhaFrutas.length === 0 ||
+        escolhaComplementos.length === 0
+    ) {
+        alert("Por favor, escolha ao menos uma seleção em cada categoria -> COBERTURA/FRUTAS/COMPLEMENTO.");
+        return false;
+    }
+    
+    else {
+         //location.reload();
+        Armazenar_Mais_Menos();
+         // Redirecionar para a próxima página
+    window.location.href = '/produtos/aRESUMO/pagina-Resumo.html';
+        //window.location.href = '../aRESUMO/pagina-Resumo.html';
+    }
+
+}
+
 
 let indiceProduto = sessionStorage.length;
 let indiceValor = sessionStorage.length;
@@ -121,4 +171,5 @@ const ProdutoEscolhido = () => {
 document.querySelector(".botaoAcomp").addEventListener("click", () => {
     ProdutoEscolhido()
     concluirPedido()
+    validacoes()
 })

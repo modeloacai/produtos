@@ -67,6 +67,7 @@ const enviarMensagemWhatsApp=()=> {
     let numeroPedido = 1;
 
     for (let i = 0; i < sessionStorage.length; i++) {
+      const chaveQuantidade = `quantidadeProduto_${i}`
       const chaveProduto = `escolhaProduto_${i}`;
       const chaveValor = `escolhaProdutoValor_${i}`;
   
@@ -75,6 +76,7 @@ const enviarMensagemWhatsApp=()=> {
       const chaveComplemento = `escolhaComplemento_${i}`;
       const chaveExtra = `escolhaExtras_${i}`;
   
+      const escolhaQuantidade = sessionStorage.getItem(chaveQuantidade);
       const escolhaProduto = sessionStorage.getItem(chaveProduto);
       const escolhaValor = parseFloat(sessionStorage.getItem(chaveValor));
       const escolhaCobertura = JSON.parse(sessionStorage.getItem(chaveCobertura)) || [];
@@ -112,12 +114,13 @@ const enviarMensagemWhatsApp=()=> {
       const somaExtras = somarArray(escolhaExtras);
 
       // Calcular a soma total
-      const somaTotal = parseFloat(escolhaValor) + somaCobertura + somaFrutas + somaComplementos + somaExtras;
+      const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
 
 
         textoParaEnviar += `
         \n*PEDIDO Nº:* ${numeroPedido}
         *PRODUTO:* ${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
+        *QUANTIDADE:* ${escolhaQuantidade}
         \n*ACOMPANHAMENTOS*
         *COBERTURA:* \n ${formatarObjetoParaString(escolhaCobertura)}
         *FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
@@ -126,6 +129,7 @@ const enviarMensagemWhatsApp=()=> {
         ____________________________________________
         \n*RESUMO TOTAL À PAGAR(R$)*
         *TAMANHO R$:* ${escolhaValor.toFixed(2)}
+        *QUANTIDADE:* ${escolhaQuantidade}
         *COBERTURA R$:* ${somaCobertura.toFixed(2)}
         *FRUTAS R$:* ${somaFrutas.toFixed(2)}
         *COMPLEMENTOS R$:* ${somaComplementos.toFixed(2)}
