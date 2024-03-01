@@ -25,9 +25,9 @@ const carrinhoCompras = () => {
     sessionStorage.removeItem(chaveValor);
   };
 
-  const valorGlobalQuantidade =(chaveQuantidade)=>{
+  const valorGlobalQuantidade = (chaveQuantidade) => {
     valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade));
-    console.log("valorAtual: "+valorAtual)
+
   }
 
   const displaySpan = (div, escolhaQuantidade) => {
@@ -37,7 +37,7 @@ const carrinhoCompras = () => {
     span.innerHTML = `${escolhaQuantidade}`
   }
 
-  const botaMaisMenos = (div, chaveQuantidade, span) => {
+  const botaMaisMenos = (div, chaveQuantidade) => {
     let botaoMais = document.createElement('button');
     let botaoMenos = document.createElement('button');
     botaoMais.setAttribute("class", "botaoMais");
@@ -49,18 +49,19 @@ const carrinhoCompras = () => {
 
     // Adiciona evento de clique para o botão de incrementar
     botaoMais.addEventListener('click', function () {
-      var valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
+      valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
       // Incrementa o valor
       valorAtual++;
       // Atualiza o valor no sessionStorage
       sessionStorage.setItem(chaveQuantidade, valorAtual);
       // Atualiza a interface
       document.querySelector(".displayQuantidade").innerHTML = `${valorAtual}`;
+      location.reload();
     });
 
     // Adiciona evento de clique para o botão de decrementar
     botaoMenos.addEventListener('click', function () {
-      var valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
+      valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
       // Verifica se o valor atual é maior que zero para evitar valores negativos
       if (valorAtual > 1) {
         // Decrementa o valor
@@ -68,10 +69,12 @@ const carrinhoCompras = () => {
         // Atualiza o valor no sessionStorage
         sessionStorage.setItem(chaveQuantidade, valorAtual);
         // Atualiza a interface
-      document.querySelector(".displayQuantidade").innerHTML = ` ${valorAtual}`;
+        document.querySelector(".displayQuantidade").innerHTML = ` ${valorAtual}`;
+        location.reload();
       }
     });
   }
+
 
   const CriaDiv = () => {
     for (let i = 0; i < sessionStorage.length; i++) {
@@ -93,8 +96,8 @@ const carrinhoCompras = () => {
       const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
       const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
 
-
-
+      valorGlobalQuantidade(chaveQuantidade)
+      // valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
 
       if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
@@ -160,9 +163,9 @@ const carrinhoCompras = () => {
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor, somaTotal);
         botaMaisMenos(div, chaveQuantidade);
-        displaySpan(div, escolhaQuantidade,chaveQuantidade);
+        displaySpan(div, escolhaQuantidade);
         calcular(somaTotal);
-        valorGlobalQuantidade(chaveQuantidade);
+
       }
     }
   }
