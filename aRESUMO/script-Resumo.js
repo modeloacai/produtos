@@ -24,6 +24,42 @@ const carrinhoCompras = () => {
     sessionStorage.removeItem(chaveValor);
   };
 
+  const botaMaisMenos = (div, chaveQuantidade, escolhaCobertura) => {
+    let botaoMais = document.createElement('button');
+    let botaoMenos = document.createElement('button');
+    botaoMais.setAttribute("class", "botaoMais");
+    botaoMenos.setAttribute("class", "botaoMenos");
+    botaoMais.innerHTML = "+";
+    botaoMenos.innerHTML = "-";
+    div.appendChild(botaoMenos);
+    div.appendChild(botaoMais);
+
+    // Adiciona evento de clique para o botão de incrementar
+    botaoMais.addEventListener('click', function () {
+        var valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
+        // Incrementa o valor
+        valorAtual++;
+        // Atualiza o valor no sessionStorage
+        sessionStorage.setItem(chaveQuantidade, valorAtual);
+        // Atualiza a interface
+        escolhaCobertura.textContent = valorAtual;
+    });
+
+    // Adiciona evento de clique para o botão de decrementar
+    botaoMenos.addEventListener('click', function () {
+        var valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
+        // Verifica se o valor atual é maior que zero para evitar valores negativos
+        if (valorAtual > 0) {
+            // Decrementa o valor
+            valorAtual--;
+            // Atualiza o valor no sessionStorage
+            sessionStorage.setItem(chaveQuantidade, valorAtual);
+            // Atualiza a interface
+            escolhaCobertura.textContent = valorAtual;
+        }
+    });
+}
+
   const CriaDiv = () => {
     for (let i = 0; i < sessionStorage.length; i++) {
 
@@ -50,6 +86,7 @@ const carrinhoCompras = () => {
       if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
+
 
         // Exibir ACOMPANHAMENTOS---------------------------------------------------
         function formatarObjetoParaString(objeto) {
@@ -108,7 +145,7 @@ const carrinhoCompras = () => {
 
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor, somaTotal);
-
+        botaMaisMenos(div, chaveQuantidade, escolhaCobertura)
         calcular(somaTotal)
       }
     }
