@@ -24,7 +24,14 @@ const carrinhoCompras = () => {
     sessionStorage.removeItem(chaveValor);
   };
 
-  const botaMaisMenos = (div, chaveQuantidade, escolhaCobertura) => {
+  const displaySpan = (div, escolhaQuantidade) => {
+    let span = document.createElement('span');
+    span.setAttribute("class", "displayQuantidade");
+    div.appendChild(span);
+    span.innerHTML = `${escolhaQuantidade}`
+  }
+
+  const botaMaisMenos = (div, chaveQuantidade, span) => {
     let botaoMais = document.createElement('button');
     let botaoMenos = document.createElement('button');
     botaoMais.setAttribute("class", "botaoMais");
@@ -36,29 +43,29 @@ const carrinhoCompras = () => {
 
     // Adiciona evento de clique para o botão de incrementar
     botaoMais.addEventListener('click', function () {
-        var valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
-        // Incrementa o valor
-        valorAtual++;
-        // Atualiza o valor no sessionStorage
-        sessionStorage.setItem(chaveQuantidade, valorAtual);
-        // Atualiza a interface
-        escolhaCobertura.textContent = valorAtual;
+      var valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
+      // Incrementa o valor
+      valorAtual++;
+      // Atualiza o valor no sessionStorage
+      sessionStorage.setItem(chaveQuantidade, valorAtual);
+      // Atualiza a interface
+      document.querySelector(".displayQuantidade").innerHTML = `${valorAtual}`;
     });
 
     // Adiciona evento de clique para o botão de decrementar
     botaoMenos.addEventListener('click', function () {
-        var valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
-        // Verifica se o valor atual é maior que zero para evitar valores negativos
-        if (valorAtual > 0) {
-            // Decrementa o valor
-            valorAtual--;
-            // Atualiza o valor no sessionStorage
-            sessionStorage.setItem(chaveQuantidade, valorAtual);
-            // Atualiza a interface
-            escolhaCobertura.textContent = valorAtual;
-        }
+      var valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
+      // Verifica se o valor atual é maior que zero para evitar valores negativos
+      if (valorAtual > 1) {
+        // Decrementa o valor
+        valorAtual--;
+        // Atualiza o valor no sessionStorage
+        sessionStorage.setItem(chaveQuantidade, valorAtual);
+        // Atualiza a interface
+      document.querySelector(".displayQuantidade").innerHTML = ` ${valorAtual}`;
+      }
     });
-}
+  }
 
   const CriaDiv = () => {
     for (let i = 0; i < sessionStorage.length; i++) {
@@ -88,6 +95,7 @@ const carrinhoCompras = () => {
         div.setAttribute("class", "mercadoria");
 
 
+
         // Exibir ACOMPANHAMENTOS---------------------------------------------------
         function formatarObjetoParaString(objeto) {
           return Array.isArray(objeto) ? formatarEscolhas(objeto) : JSON.stringify(objeto, null, 2);
@@ -108,9 +116,9 @@ const carrinhoCompras = () => {
         div.innerHTML += `
  <p>
  <br> <br><span style="font-weight: bold;">PRODUTO:</span> <br>&#127826;${escolhaProduto} - R$ ${escolhaValor.toFixed(2)}
- <br> <br><span style="font-weight: bold;">&#x27A1 QUANTIDADE: </span>${escolhaQuantidade}
- <br>
-   <br><span style="font-weight: bold;"> ACOMPANHAMENTOS</span>
+ <br><br>-> QUANTIDADE:
+ <br><br>
+ <br><br><span style="font-weight: bold;"> ACOMPANHAMENTOS</span>
    <br><br><span style="font-weight: bold;">&#127860; COBERTURA:</span> <br> ${formatarObjetoParaString(escolhaCobertura)}
    <br><br><span style="font-weight: bold;">&#127860; FRUTAS:</span> <br> ${formatarObjetoParaString(escolhaFrutas)}
    <br><br><span style="font-weight: bold;">&#127860; COMPLEMENTO:</span> <br> ${formatarObjetoParaString(escolhaComplementos)}
@@ -145,8 +153,9 @@ const carrinhoCompras = () => {
 
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor, somaTotal);
-        botaMaisMenos(div, chaveQuantidade, escolhaCobertura)
-        calcular(somaTotal)
+        botaMaisMenos(div, chaveQuantidade);
+        displaySpan(div, escolhaQuantidade);
+        calcular(somaTotal);
       }
     }
   }

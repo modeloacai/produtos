@@ -279,9 +279,9 @@ p {
   cursor: pointer;
   position: absolute;
   text-align: center;
-  top: 95px;
+  top: 120px;
   /* Ajuste a distância do topo conforme necessário */
-  right: 150px;
+  right: 290px;
   /* Ajuste a distância da direita conforme necessário */
   font-weight: 900;
   color: rgb(255, 255, 255);
@@ -297,14 +297,29 @@ p {
   text-align: center;
   cursor: pointer;
   position: absolute;
-  top: 95px;
+  top: 120px;
   /* Ajuste a distância do topo conforme necessário */
-  right: 110px;
+  right: 220px;
   /* Ajuste a distância da direita conforme necessário */
   font-weight: 900;
   color: rgb(255, 255, 255);
 }
 
-.exibirQuantidade{
-  background-color: red;
+
+.displayQuantidade{
+  width: 30px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 120px;
+  /* Ajuste a distância do topo conforme necessário */
+  right: 250px;
+  /* Ajuste a distância da direita conforme necessário */
+  font-weight: 900;
 }
