@@ -281,7 +281,7 @@ p {
   text-align: center;
   top: 120px;
   /* Ajuste a distância do topo conforme necessário */
-  right: 290px;
+  right: 220px;
   /* Ajuste a distância da direita conforme necessário */
   font-weight: 900;
   color: rgb(255, 255, 255);
@@ -299,7 +299,8 @@ p {
   position: absolute;
   top: 120px;
   /* Ajuste a distância do topo conforme necessário */
-  right: 220px;
+  right: 290px;
+  
   /* Ajuste a distância da direita conforme necessário */
   font-weight: 900;
   color: rgb(255, 255, 255);

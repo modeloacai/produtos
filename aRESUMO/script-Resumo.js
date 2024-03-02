@@ -70,7 +70,7 @@ const carrinhoCompras = () => {
         sessionStorage.setItem(chaveQuantidade, valorAtual);
         // Atualiza a interface
         document.querySelector(".displayQuantidade").innerHTML = ` ${valorAtual}`;
-        location.reload();
+            location.reload();
       }
     });
   }
