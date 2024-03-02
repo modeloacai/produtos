@@ -139,8 +139,8 @@ const validacoes = () => {
          //location.reload();
         Armazenar_Mais_Menos();
          // Redirecionar para a próxima página
-    //window.location.href = '/produtos/aRESUMO/pagina-Resumo.html';
-        window.location.href = '../aRESUMO/pagina-Resumo.html';
+    window.location.href = '/produtos/aRESUMO/pagina-Resumo.html';
+       // window.location.href = '../aRESUMO/pagina-Resumo.html';
     }
 
 }

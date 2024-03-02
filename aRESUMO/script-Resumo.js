@@ -25,7 +25,7 @@ const carrinhoCompras = () => {
   };
 
   const botaMaisMenos = (div, chaveQuantidade) => {
-  
+
     let span = document.createElement('span');
     span.setAttribute("class", "displayQuantidade");
     div.appendChild(span);
@@ -43,7 +43,7 @@ const carrinhoCompras = () => {
     div.appendChild(botaoMais);
 
 
-    const botaoMaisS=()=>{
+    const botaoMaisS = () => {
       valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
       // Incrementa o valor
       valorAtual++;
@@ -51,17 +51,19 @@ const carrinhoCompras = () => {
       sessionStorage.setItem(chaveQuantidade, valorAtual);
       // Atualiza a interface
       document.querySelector(".displayQuantidade").innerHTML = `${valorAtual}`;
+
     }
 
 
     // Adiciona evento de clique para o botão de incrementar
     botaoMais.addEventListener('click', function () {
-      botaoMaisS()
+      botaoMaisS();
       location.reload();
     });
 
 
-    const botaoMenosS=()=>{
+
+    const botaoMenosS = () => {
       valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
       // Verifica se o valor atual é maior que zero para evitar valores negativos
       if (valorAtual > 1) {
@@ -79,7 +81,7 @@ const carrinhoCompras = () => {
       botaoMenosS()
       location.reload();
     });
-    
+
   }
 
 
