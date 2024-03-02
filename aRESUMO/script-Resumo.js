@@ -1,7 +1,6 @@
 
 const carrinhoCompras = () => {
   let somaGeral = 0;
-  let valorAtual = 0;
   const container = document.querySelector('.conteudo');
 
   const Apagar = (div, chaveProduto, chaveValor, somaTotal) => {
@@ -24,11 +23,6 @@ const carrinhoCompras = () => {
     sessionStorage.removeItem(chaveProduto);
     sessionStorage.removeItem(chaveValor);
   };
-
-  const valorGlobalQuantidade = (chaveQuantidade) => {
-    valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade));
-
-  }
 
   const botaMaisMenos = (div, chaveQuantidade) => {
   
@@ -57,13 +51,13 @@ const carrinhoCompras = () => {
       sessionStorage.setItem(chaveQuantidade, valorAtual);
       // Atualiza a interface
       document.querySelector(".displayQuantidade").innerHTML = `${valorAtual}`;
-      location.reload();
     }
 
 
     // Adiciona evento de clique para o botão de incrementar
     botaoMais.addEventListener('click', function () {
       botaoMaisS()
+      location.reload();
     });
 
 
@@ -77,13 +71,13 @@ const carrinhoCompras = () => {
         sessionStorage.setItem(chaveQuantidade, valorAtual);
         // Atualiza a interface
         document.querySelector(".displayQuantidade").innerHTML = ` ${valorAtual}`;
-          location.reload();
       }
     }
 
     // Adiciona evento de clique para o botão de decrementar
     botaoMenos.addEventListener('click', function () {
       botaoMenosS()
+      location.reload();
     });
     
   }
@@ -108,9 +102,6 @@ const carrinhoCompras = () => {
       const escolhaFrutas = JSON.parse(sessionStorage.getItem(chaveFruta)) || [];
       const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
       const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
-
-      valorGlobalQuantidade(chaveQuantidade)
-      // valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
 
       if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
@@ -158,13 +149,13 @@ const carrinhoCompras = () => {
         const somaExtras = somarArray(escolhaExtras);
 
         // Calcular a soma total
-        const somaTotal = parseFloat(escolhaValor) * valorAtual + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
+        const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
 
         // Construir o texto com os resultados
         div.innerHTML += `
 <p><br><span style="font-weight: bold;">RESUMO TOTAL À PAGAR(R$)</span><br>
 <span style="font-weight: bold;">&#128178 Tamanho R$:</span> ${escolhaValor.toFixed(2)} <br>
-<span style="font-weight: bold;">&#x27A1 Quantidade:</span> ${valorAtual}<br>
+<span style="font-weight: bold;">&#x27A1 Quantidade:</span> ${escolhaQuantidade}<br>
 <span style="font-weight: bold;">&#128178 Cobertura R$:</span> ${somaCobertura.toFixed(2)} <br>
 <span style="font-weight: bold;">&#128178 Frutas R$:</span> ${somaFrutas.toFixed(2)} <br>
 <span style="font-weight: bold;">&#128178 Complementos R$:</span> ${somaComplementos.toFixed(2)} <br>
