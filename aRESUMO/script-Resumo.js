@@ -48,8 +48,8 @@ const carrinhoCompras = () => {
     div.appendChild(botaoMenos);
     div.appendChild(botaoMais);
 
-    // Adiciona evento de clique para o botão de incrementar
-    botaoMais.addEventListener('click', function () {
+
+    const botaoMaisS=()=>{
       valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
       // Incrementa o valor
       valorAtual++;
@@ -57,11 +57,17 @@ const carrinhoCompras = () => {
       sessionStorage.setItem(chaveQuantidade, valorAtual);
       // Atualiza a interface
       document.querySelector(".displayQuantidade").innerHTML = `${valorAtual}`;
-     // location.reload();
+      location.reload();
+    }
+
+
+    // Adiciona evento de clique para o botão de incrementar
+    botaoMais.addEventListener('click', function () {
+      botaoMaisS()
     });
 
-    // Adiciona evento de clique para o botão de decrementar
-    botaoMenos.addEventListener('click', function () {
+
+    const botaoMenosS=()=>{
       valorAtual = parseInt(sessionStorage.getItem(chaveQuantidade))
       // Verifica se o valor atual é maior que zero para evitar valores negativos
       if (valorAtual > 1) {
@@ -71,9 +77,15 @@ const carrinhoCompras = () => {
         sessionStorage.setItem(chaveQuantidade, valorAtual);
         // Atualiza a interface
         document.querySelector(".displayQuantidade").innerHTML = ` ${valorAtual}`;
-          //  location.reload();
+          location.reload();
       }
+    }
+
+    // Adiciona evento de clique para o botão de decrementar
+    botaoMenos.addEventListener('click', function () {
+      botaoMenosS()
     });
+    
   }
 
 
