@@ -30,20 +30,21 @@ const carrinhoCompras = () => {
 
   }
 
-  const displaySpan = (div, escolhaQuantidade) => {
+  const botaMaisMenos = (div, chaveQuantidade) => {
+  
     let span = document.createElement('span');
     span.setAttribute("class", "displayQuantidade");
     div.appendChild(span);
-    span.innerHTML = `${escolhaQuantidade}`
-  }
+    span.innerHTML = parseInt(sessionStorage.getItem(chaveQuantidade));
 
-  const botaMaisMenos = (div, chaveQuantidade) => {
     let botaoMais = document.createElement('button');
     let botaoMenos = document.createElement('button');
     botaoMais.setAttribute("class", "botaoMais");
     botaoMenos.setAttribute("class", "botaoMenos");
+
     botaoMais.innerHTML = "+";
     botaoMenos.innerHTML = "-";
+
     div.appendChild(botaoMenos);
     div.appendChild(botaoMais);
 
@@ -56,7 +57,7 @@ const carrinhoCompras = () => {
       sessionStorage.setItem(chaveQuantidade, valorAtual);
       // Atualiza a interface
       document.querySelector(".displayQuantidade").innerHTML = `${valorAtual}`;
-      location.reload();
+     // location.reload();
     });
 
     // Adiciona evento de clique para o botão de decrementar
@@ -70,7 +71,7 @@ const carrinhoCompras = () => {
         sessionStorage.setItem(chaveQuantidade, valorAtual);
         // Atualiza a interface
         document.querySelector(".displayQuantidade").innerHTML = ` ${valorAtual}`;
-            location.reload();
+          //  location.reload();
       }
     });
   }
@@ -163,7 +164,6 @@ const carrinhoCompras = () => {
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor, somaTotal);
         botaMaisMenos(div, chaveQuantidade);
-        displaySpan(div, escolhaQuantidade);
         calcular(somaTotal);
 
       }
