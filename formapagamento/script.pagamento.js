@@ -163,7 +163,7 @@ const enviarMensagemWhatsApp=()=> {
   
     if (valorTroco) {
       textoParaEnviar += `
-      *TROCO:* ${valorTroco}
+      *TROCO:* R$ ${valorTroco}
       `;
     }
   
