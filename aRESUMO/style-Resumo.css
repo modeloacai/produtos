@@ -30,8 +30,7 @@ section {
 
 
 /*Botão*/
-.acompanhamento,
-.botaoMaisItens {
+.acompanhamento {
   background-color: rgba(71, 4, 97);
   height: 50px;
   width: 200px;
@@ -46,6 +45,20 @@ section {
   font-weight: bolder;
 }
 
+
+/*Botão*/
+.botaoMaisItens {
+  background-color: none;
+  height: 50px;
+  width: 200px;
+  border: none;
+  cursor: pointer;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 15px;
+  color: rgb(254, 255, 253);
+  font-weight: bolder;
+}
+
 .acompanhamento:hover {
   color: rgb(128, 205, 42);
 }
@@ -56,13 +69,13 @@ section {
   margin: 0px 0px -110px -55px;
 }
 
-
-
-a {
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
+.ajuste_A{
+ padding: 15px 60px 15px 60px;
+ text-decoration: none;
+ color: white;
+ cursor: pointer;
 }
+
 
 .ajustarButon {
   margin: 0px 0px 0px 10px;
