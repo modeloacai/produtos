@@ -166,7 +166,7 @@ const enviarMensagemWhatsApp=()=> {
 `;
 
   const codigoPais = '55';
-  const numeroTelefone = '87991793828';
+  const numeroTelefone = '87991614277';
 
   const linkWhatsApp = `https://wa.me/${codigoPais}${numeroTelefone}?text=${encodeURIComponent(textoParaEnviar)}`;
   window.open(linkWhatsApp, '_blank');
